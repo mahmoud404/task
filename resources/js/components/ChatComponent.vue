@@ -1,4 +1,5 @@
 <template>
+    <div class="card-body height3">
     <ul class="chat-list">
         <li v-for="message in messages">
             <div class="chat-body">
@@ -8,14 +9,13 @@
                 </div>
             </div>
         </li>
-        <li>
-            <div class="chat-body">
-                <div class="chat-message">
-                    <textarea class="form-control form-control-rounded" v-model="message" @keyup.enter="sendMessage"  placeholder="Type your message" name="message" id="message" cols="30" rows="3"></textarea>
-                </div>
-            </div>
-        </li>
     </ul>
+        <div class="chat-body">
+            <div class="chat-message">
+                <input class="form-control form-control-rounded" v-model="message" @keyup.enter="sendMessage"  placeholder="Type your message" name="message" id="message"/>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -64,10 +64,7 @@
                 };
                 let url = "/messages";
                 axios.post(url,data).then(response => {
-                    if (response)
-                    {
-                        this.messages.push(response.data.data);
-                    }
+
                 });
                 this.message = null;
             },

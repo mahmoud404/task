@@ -28,7 +28,7 @@ class ApplicantRequest extends FormRequest
             'email'=>'required|email',
             'phone'=>'required',
             'cv'=>'required|file|mimes:pdf|max:1024',
-            'passport_image'=>'required|image|dimensions:min_width=500,min_height=700|max:1024',
+            'passport_image'=>'required|image|dimensions:min_width=100,min_height=200|max:1024',
         ];
     }
 }

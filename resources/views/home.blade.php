@@ -7,9 +7,8 @@
             <div class="container content">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="card">
+                        <div class="card" id="app">
                             <div class="card-header">Chat</div>
-                            <div class="card-body height3" id="app">
                                 <chat-component></chat-component>
                             </div>
                         </div>

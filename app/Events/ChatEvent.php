@@ -34,7 +34,7 @@ class ChatEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return Redis::publish('chat.'.$this->message->chat_id, json_encode([
+        return Redis::publish('chat', json_encode([
             'event' => 'send_message',
             'data'  => $this->message
         ]));

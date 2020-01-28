@@ -13,7 +13,7 @@ class ChatController extends Controller
 
     public function messages()
     {
-        $messages = Message::latest()->get();
+        $messages = Message::all();
         return MessageResource::collection($messages);
     }
 
@@ -23,7 +23,7 @@ class ChatController extends Controller
         $message = $user->messages()->create([
             'content'=>$request->message,
         ]);
-        event(new ChatEvent($message));
-        return MessageResource::make($message);
+        event(new ChatEvent(MessageResource::make($message)));
+        return;
     }
 }
